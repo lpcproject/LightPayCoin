@@ -3,7 +3,7 @@ LightPayCoin Core integration/staging repository
 
 Quick installation of the LightPayCoin daemon under linux. See detailed instructions there [build-unix.md](build-unix.md)
 
-Installation of libraries:
+Installation of libraries (using root user):
 
     add-apt-repository ppa:bitcoin/bitcoin -y
     apt-get update
@@ -11,7 +11,7 @@ Installation of libraries:
     apt-get install -y libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev
     apt-get install -y libdb4.8-dev libdb4.8++-dev
 
-Cloning the repository and compiling:
+Cloning the repository and compiling (use any user with the sudo group):
 
     cd
     git clone https://github.com/lpcproject/LightPayCoin.git
