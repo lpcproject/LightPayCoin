@@ -1,5 +1,5 @@
 LightPayCoin Core integration/staging repository
-================================================
+======================================
 
 Quick installation of the LightPayCoin daemon under linux.
 
@@ -36,3 +36,7 @@ Demon status:
 
     lightpaycoin-cli getinfo
     lightpaycoin-cli mnsync status
+
+All binaries for different operating systems, you can download in the releases repository:
+
+    [here](https://github.com/lpcproject/LightPayCoin/releases)
