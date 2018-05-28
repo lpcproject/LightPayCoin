@@ -1,7 +1,7 @@
 LightPayCoin Core integration/staging repository
 ======================================
 
-Quick installation of the LightPayCoin daemon under linux.
+Quick installation of the LightPayCoin daemon under linux. See detailed instructions there [build-unix.md](build-unix.md)
 
 Installation of libraries:
 
@@ -39,4 +39,4 @@ Demon status:
 
 All binaries for different operating systems, you can download in the releases repository:
 
-    [here](https://github.com/lpcproject/LightPayCoin/releases)
+    https://github.com/lpcproject/LightPayCoin/releases
