@@ -13,6 +13,7 @@ Installation of libraries:
 
 Cloning the repository and compiling:
 
+    cd
     git clone https://github.com/lpcproject/LightPayCoin.git
     cd LightPayCoin
     ./autogen.sh
