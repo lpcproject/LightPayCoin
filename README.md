@@ -1,7 +1,7 @@
 <html>
 <body>
-<p>LightPayCoin Core integration/staging repository<br>
-=====================================</p>
+<h2>LightPayCoin Core integration/staging repository<br>
+  =====================================</h2>
 <p><strong>Quick  installation of the daemon under linux (Ubuntu 16.04, root user):</strong></p>
 <ul>
   <li><strong>Installation of libraries:</strong></li>
