@@ -1,13 +1,7 @@
-<!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Документ без названия</title>
-</head>
-
 <body>
-LightPayCoin Core integration/staging repository<br>
-=====================================
+<p>LightPayCoin Core integration/staging repository<br>
+=====================================</p>
 <p><strong>Quick  installation of the daemon under linux (Ubuntu 16.04, root user):</strong></p>
 <ul>
   <li><strong>Installation of libraries:</strong></li>
