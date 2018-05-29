@@ -40,7 +40,7 @@ Demon status:
 
 All binaries for different operating systems, you can download in the releases repository:
 
-    https://github.com/lpcproject/LightPayCoin/releases
+https://github.com/lpcproject/LightPayCoin/releases
 
 P2P port: 39797, RPC port: 39798
 -
