@@ -1,6 +1,11 @@
 LightPayCoin Core integration/staging repository
 ======================================
 
+
+It is recommended [use the shell script](https://github.com/lpcproject/lpcinstall) to install a LightPayCoin Masternode on a Linux server running Ubuntu 14.04 or 16.04
+
+***
+
 Quick installation of the LightPayCoin daemon under linux. See detailed instructions there [build-unix.md](build-unix.md)
 
 Installation of libraries (using root user):
