@@ -49,3 +49,4 @@ https://github.com/lpcproject/LightPayCoin/releases
 
 P2P port: 39797, RPC port: 39798
 -
+  [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/)
