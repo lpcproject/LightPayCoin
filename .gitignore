@@ -1,0 +1,5 @@
+# ignore IntelliJ directories and settings
+*.iml
+.idea/
+.idea/*
+
