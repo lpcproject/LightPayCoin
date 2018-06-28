@@ -27,22 +27,22 @@ from argparse import ArgumentParser
 
 class FrameworkInfo(object):
     def __init__(self):
-        self.frameworkDirectory = str()
-        self.frameworkName = str()
-        self.frameworkPath = str()
-        self.binaryDirectory = str()
-        self.binaryName = str()
-        self.binaryPath = str()
-        self.version = str()
-        self.installName = str()
-        self.deployedInstallName = str()
-        self.sourceFilePath = str()
-        self.destinationDirectory = str()
-        self.sourceResourcesDirectory = str()
-        self.sourceVersionContentsDirectory = str()
-        self.sourceContentsDirectory = str()
-        self.destinationResourcesDirectory = str()
-        self.destinationVersionContentsDirectory = str()
+        self.frameworkDirectory = ""
+        self.frameworkName = ""
+        self.frameworkPath = ""
+        self.binaryDirectory = ""
+        self.binaryName = ""
+        self.binaryPath = ""
+        self.version = ""
+        self.installName = ""
+        self.deployedInstallName = ""
+        self.sourceFilePath = ""
+        self.destinationDirectory = ""
+        self.sourceResourcesDirectory = ""
+        self.sourceVersionContentsDirectory = ""
+        self.sourceContentsDirectory = ""
+        self.destinationResourcesDirectory = ""
+        self.destinationVersionContentsDirectory = ""
 
     def __eq__(self, other):
         if self.__class__ == other.__class__:
