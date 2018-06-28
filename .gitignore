@@ -3,7 +3,7 @@
 *.sublime-workspace
 todo.txt
 reset-files.bash
-
+.idea/
 
 *.tar.gz
 *.pyc
