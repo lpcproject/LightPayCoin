@@ -2,10 +2,10 @@ The following is a list of assets used in the bitcoin source and their proper at
 
 [Wladimir van der Laan](https://github.com/laanwj)
 -----------------------
-#### Info
+##### Info
 * License: MIT
 
-### Assets Used
+#### Assets Used
 	src/qt/res/icons/clock*.png, src/qt/res/icons/tx*.png,
 	src/qt/res/src/clock_green.svg, src/qt/res/src/clock1.svg,
 	src/qt/res/src/clock2.svg, src/qt/res/src/clock3.svg,
@@ -15,7 +15,7 @@ The following is a list of assets used in the bitcoin source and their proper at
 [David Vignoni](http://www.icon-king.com)
 -----------------------
 
-### Info
+#### Info
 * Icon Pack: NUVOLA ICON THEME for KDE 3.x
 * Designer: David Vignoni (david@icon-king.com)
 * License: LGPL

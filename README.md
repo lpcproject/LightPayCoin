@@ -1,4 +1,4 @@
-LightPayCoin Core (fork PIVX) integration/staging repository
+LightPayCoin Core (fork of PIVX) integration/staging repository
 ======================================
 
 
