@@ -3,9 +3,10 @@
 *.sublime-workspace
 todo.txt
 reset-files.bash
+.idea/
 
 *.tar.gz
-
+*.pyc
 *.exe
 src/lightpaycoin
 src/lightpaycoind
@@ -121,3 +122,4 @@ qa/pull-tester/test.*/*
 .project
 /doc/doxygen/
 /nbproject/
+
