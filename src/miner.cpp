@@ -96,7 +96,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
     CReserveKey reservekey(pwallet);
 
     // Create new block
-    unique_ptr<CBlockTemplate> pblocktemplate(new CBlockTemplate());
+    auto_ptr<CBlockTemplate> pblocktemplate(new CBlockTemplate());
     if (!pblocktemplate.get())
         return NULL;
     CBlock* pblock = &pblocktemplate->block; // pointer for convenience
@@ -133,7 +133,6 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
                 pblock->nTime = nTxNewTime;
                 pblock->vtx[0].vout[0].SetEmpty();
                 pblock->vtx.push_back(CTransaction(txCoinStake));
-		LogPrintf("StakingDebug %s", txCoinStake.ToString().c_str());
                 fStakeFound = true;
             }
             nLastCoinStakeSearchInterval = nSearchTime - nLastCoinStakeSearchTime;
@@ -349,10 +348,8 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
 
 
         // Compute final coinbase transaction.
-        if (fProofOfStake) {
-            pblock->vtx[0].vin[0].scriptSig = CScript() << nHeight << OP_0;
-        } else if (!fProofOfStake) {
-            txNew.vin[0].scriptSig = CScript() << nHeight << OP_0;
+        pblock->vtx[0].vin[0].scriptSig = CScript() << nHeight << OP_0;
+        if (!fProofOfStake) {
             pblock->vtx[0] = txNew;
             pblocktemplate->vTxFees[0] = -nFees;
         }
@@ -471,7 +468,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
                 continue;
             }
 
-            while (chainActive.Tip()->nTime < 1471482000 || vNodes.size() < 3 || pwallet->IsLocked() || !fMintableCoins || nReserveBalance >= pwallet->GetBalance() || !masternodeSync.IsSynced()) {
+            while (chainActive.Tip()->nTime < 1471482000 || vNodes.empty() || pwallet->IsLocked() || !fMintableCoins || nReserveBalance >= pwallet->GetBalance() || !masternodeSync.IsSynced()) {
                 nLastCoinStakeSearchInterval = 0;
                 MilliSleep(5000);
                 if (!fGenerateBitcoins && !fProofOfStake)
@@ -496,7 +493,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
         if (!pindexPrev)
             continue;
 
-        unique_ptr<CBlockTemplate> pblocktemplate(CreateNewBlockWithKey(reservekey, pwallet, fProofOfStake));
+        auto_ptr<CBlockTemplate> pblocktemplate(CreateNewBlockWithKey(reservekey, pwallet, fProofOfStake));
         if (!pblocktemplate.get())
             continue;
 

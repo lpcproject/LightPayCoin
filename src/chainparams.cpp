@@ -142,8 +142,9 @@ public:
         assert(hashGenesisBlock == uint256("00000dfdec6a9190b26520e93ef5eba15a82646a47ddf8fb5be4477a836467ee"));
         assert(genesis.hashMerkleRoot == uint256("98a0c0dc8214278a8a27ce9d7ca4107dd7cd6787ea6001d3d6c1a7b764098570"));
 
-        vSeeds.push_back(CDNSSeedData("80.211.202.181", "80.211.202.181"));         // Single node address
+        vSeeds.push_back(CDNSSeedData("80.211.128.125", "80.211.128.125"));         // Single node address
         vSeeds.push_back(CDNSSeedData("94.177.187.54", "94.177.187.54"));           // Single node address
+        vSeeds.push_back(CDNSSeedData("80.211.129.187", "80.211.129.187"));         // Single node address
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 49);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 13);
@@ -156,19 +157,18 @@ public:
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
         fRequireRPCPassword = true;
-        fMiningRequiresPeers = false;		// default true
+        fMiningRequiresPeers = true;		// default true
         fAllowMinDifficultyBlocks = false;
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
-        fSkipProofOfWorkCheck = true;		// default false
+        fSkipProofOfWorkCheck = false;		// default false
         fTestnetToBeDeprecatedFieldRPC = false;
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
         strSporkKey = "04b8a44c0467e07b59aacede1352cff10d7f194b1a09bd1bc62847b3e29f9f0a340ddc8f9c29423f27e0ec3b29e6b1f9127db303b0cad8f3b83ab8b1b52f61bac4";
         strObfuscationPoolDummyAddress = "Lo3fnibtjwvqYE1T7Lce5uYbdt3pf6PKUu";
-		
         nStartMasternodePayments = 1524873600; //Wed, 25 Jun 2014 20:36:16 GMT
     }
 
@@ -218,8 +218,9 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 /*
-        vSeeds.push_back(CDNSSeedData("80.211.202.181", "80.211.202.181"));         // Single node address
+        vSeeds.push_back(CDNSSeedData("80.211.128.125", "80.211.128.125"));         // Single node address
         vSeeds.push_back(CDNSSeedData("94.177.187.54", "94.177.187.54"));           // Single node address
+        vSeeds.push_back(CDNSSeedData("80.211.129.187", "80.211.129.187"));         // Single node address
 */
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet lightpaycoin addresses start with 'x' or 'y'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet lightpaycoin script addresses start with '8' or '9'
@@ -234,12 +235,12 @@ public:
         convertSeed6(vFixedSeeds, pnSeed6_test, ARRAYLEN(pnSeed6_test));
 
         fRequireRPCPassword = true;
-        fMiningRequiresPeers = false;
+        fMiningRequiresPeers = true;
         fAllowMinDifficultyBlocks = true;
         fDefaultConsistencyChecks = false;
         fRequireStandard = false;
         fMineBlocksOnDemand = false;
-        fSkipProofOfWorkCheck = true;
+        fSkipProofOfWorkCheck = false;
         fTestnetToBeDeprecatedFieldRPC = true;
 
         nPoolMaxTransactions = 2;

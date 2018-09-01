@@ -280,28 +280,28 @@ std::string GetRequiredPaymentsString(int nBlockHeight)
 }
 
 void CMasternodePayments::FillBlockPayee(CMutableTransaction& txNew, int64_t nFees, bool fProofOfStake)
-{   
+{
     CBlockIndex* pindexPrev = chainActive.Tip();
     if (!pindexPrev) return;
-    
+
     bool hasPayment = true;
     CScript payee;
-    
+
     //spork
     if (!masternodePayments.GetBlockPayee(pindexPrev->nHeight + 1, payee)) {
-        //no masternode detected 
+        //no masternode detected
         CMasternode* winningNode = mnodeman.GetCurrentMasterNode(1);
         if (winningNode) {
             payee = GetScriptForDestination(winningNode->pubKeyCollateralAddress.GetID());
         } else {
-            LogPrint("masternode","CreateNewBlock: Failed to detect masternode to pay\n");
+            LogPrintf("CreateNewBlock: Failed to detect masternode to pay\n");
             hasPayment = false;
         }
     }
-    
+
     CAmount blockValue = GetBlockValue(pindexPrev->nHeight);
     CAmount masternodePayment = GetMasternodePayment(pindexPrev->nHeight, blockValue);
-    
+
     if (hasPayment) {
         if (fProofOfStake) {
             /**For Proof Of Stake vout[0] must be null
@@ -327,9 +327,7 @@ void CMasternodePayments::FillBlockPayee(CMutableTransaction& txNew, int64_t nFe
         ExtractDestination(payee, address1);
         CBitcoinAddress address2(address1);
 
-        LogPrint("masternode","Masternode payment of %s to %s\n", FormatMoney(masternodePayment).c_str(), address2.ToString().c_str());
-    } else {
-      	txNew.vout[0].nValue = blockValue;
+        LogPrintf("Masternode payment of %s to %s\n", FormatMoney(masternodePayment).c_str(), address2.ToString().c_str());
     }
 }
 
@@ -548,10 +546,18 @@ bool CMasternodeBlockPayees::IsTransactionValid(const CTransaction& txNew)
         bool found = false;
         BOOST_FOREACH (CTxOut out, txNew.vout) {
             if (payee.scriptPubKey == out.scriptPubKey) {
-                if(out.nValue >= requiredMasternodePayment)
+                if(nBlockHeight <= 130000 && out.nValue <= requiredMasternodePayment) {
                     found = true;
+					if (fDebug)
+                        LogPrintf("Masternode payment was made successfully. Paid=%s Max=%s Blocks=%s Reward=%s\n", FormatMoney(out.nValue).c_str(), FormatMoney(requiredMasternodePayment).c_str(), nBlockHeight, FormatMoney(nReward).c_str());
+                }
+                else if(nBlockHeight > 130000 && out.nValue >= requiredMasternodePayment) {
+                    found = true;
+					if (fDebug)
+                        LogPrintf("Masternode payment was made successfully. Paid=%s Min=%s Blocks=%s Reward=%s\n", FormatMoney(out.nValue).c_str(), FormatMoney(requiredMasternodePayment).c_str(), nBlockHeight, FormatMoney(nReward).c_str());
+                }
                 else
-                    LogPrintf("Masternode payment is out of drift range. Paid=%s Min=%s\n", FormatMoney(out.nValue).c_str(), FormatMoney(requiredMasternodePayment).c_str());
+                    LogPrintf("Masternode payment is out of drift range. Paid=%s Min=%s Blocks=%s Reward=%s\n", FormatMoney(out.nValue).c_str(), FormatMoney(requiredMasternodePayment).c_str(), nBlockHeight, FormatMoney(nReward).c_str());
             }
         }
 

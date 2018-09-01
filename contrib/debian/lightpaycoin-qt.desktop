@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Lightpaycoin
+Comment=Lightpaycoin P2P Cryptocurrency
+Comment[fr]=Lightpaycoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Lightpaycoin, eşten eşe kriptografik sanal para birimi
+Exec=lightpaycoin-qt %u
+Terminal=false
+Type=Application
+Icon=lightpaycoin128
+MimeType=x-scheme-handler/lightpaycoin;
+Categories=Office;Finance;

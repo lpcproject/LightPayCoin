@@ -1,0 +1,26 @@
+# /etc/conf.d/lightpaycoind: config file for /etc/init.d/lightpaycoind
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/lightpaycoin/lightpaycoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/lightpaycoind"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/lightpaycoind.pid"
+
+# Where to write lightpaycoind data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/lightpaycoind"
+
+# User and group to own lightpaycoind process
+#BITCOIND_USER="lightpaycoin"
+#BITCOIND_GROUP="lightpaycoin"
+
+# Path to lightpaycoind executable
+#BITCOIND_BIN="/usr/bin/lightpaycoind"
+
+# Nice value to run lightpaycoind under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

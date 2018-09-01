@@ -1,5 +1,5 @@
 /****************************************************************************************/
-/*************** [COLOR CODES] DARK PURPLE:#3A5E60 LIGHT PURPLE:#27B0CC *****************/
+/*************** [COLOR CODES] DARK PURPLE:#264759 LIGHT PURPLE:#27B0CC *****************/
 /****************************************************************************************/
 
 
@@ -46,14 +46,14 @@ color:#333;
 }
 
 QToolBar {
-background-color:#3A5E60;
+background-color:#264759;
 border:0px solid #000;
 padding:0;
 margin:0;
 }
 
 QToolBar > QToolButton {
-background-color:#3A5E60;
+background-color:#264759;
 border:0px solid #333;
 min-height:2.5em;
 padding: 0em 1em;
@@ -79,7 +79,7 @@ background-color:transparent;
 }
 
 QProgressBar::chunk {
-background-color:#3A5E60;
+background-color:#264759;
 width: 20px;
 }
 
@@ -300,7 +300,7 @@ outline:0;
 
 QHeaderView::section { /* Table Header Sections */
 qproperty-alignment:center;
-background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.25, stop: 0 #3A5E60, stop: 1 #27B0CC);
+background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.25, stop: 0 #264759, stop: 1 #27B0CC);
 color:#fff;
 min-height:25px;
 font-weight:bold;
@@ -849,7 +849,7 @@ QWidget .QFrame#frame .QLabel#labelBalance { /* Available Balance */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 font-size:12px;
 font-weight:bold;
-color:#3A5E60;
+color:#264759;
 margin-left:0px;
 }
 

@@ -1824,22 +1824,22 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 	else if (nHeight <= 99999 && nHeight >= 90000) {
         ret = blockValue * 0.68;
     }
-	else if (nHeight <= 109999 && nHeight >= 100000) {
+	else if (nHeight <= 109999 && nHeight >= 100000) { // 20 * 0.685 = 13.7
         ret = blockValue * 0.685;
     }
-	else if (nHeight <= 119999 && nHeight >= 110000) {
+	else if (nHeight <= 119999 && nHeight >= 110000) { // 22 * 0.69 = 15.18		Paid=13.7 >= Min=15.18
         ret = blockValue * 0.69;
     }
-	else if (nHeight <= 129999 && nHeight >= 120000) {
+	else if (nHeight <= 129999 && nHeight >= 120000) { // 24 * 0.695 = 16.68	Paid=15.18 >= Min=16.68
         ret = blockValue * 0.695;
     }
-	else if (nHeight <= 139999 && nHeight >= 130000) {
+	else if (nHeight <= 139999 && nHeight >= 130000) { // 26 * 0.70 = 18.2		Paid=16.68 >= Min=18.2
         ret = blockValue * 0.70;
     }
-	else if (nHeight <= 149999 && nHeight >= 140000) {
+	else if (nHeight <= 149999 && nHeight >= 140000) { // 25 * 0.705 = 17.625	Paid=18.2 >= Min=17.625
         ret = blockValue * 0.705;
     }
-	else if (nHeight <= 159999 && nHeight >= 150000) {
+	else if (nHeight <= 159999 && nHeight >= 150000) { // 24 * 0.71 = 17.04		Paid=17.625 >= Min=17.04
         ret = blockValue * 0.71;
     }
 	else if (nHeight <= 169999 && nHeight >= 160000) {
@@ -1947,10 +1947,10 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 	else if (nHeight <= 509999 && nHeight >= 500000) {
         ret = blockValue * 0.885;
     }
-	else if (nHeight <= 519999 && nHeight >= 510000) {
+	else if (nHeight <= 519999 && nHeight >= 510000) { // 6.4 * 0.89 = 5.696
         ret = blockValue * 0.89;
     }
-	else if (nHeight <= 529999 && nHeight >= 520000) {
+	else if (nHeight <= 529999 && nHeight >= 520000) { // 6.2 * 0.895 = 5.549		Paid=5.696 >= Min=5.549
         ret = blockValue * 0.895;
     }
 	else if (nHeight >= 530000) {
