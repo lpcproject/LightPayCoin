@@ -1,0 +1,26 @@
+[Unit]
+Description=LightPayCoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=lightpaycoin
+Group=lightpaycoin
+
+Type=forking
+PIDFile=/var/lib/lightpaycoind/lightpaycoind.pid
+
+ExecStart=/usr/bin/lightpaycoind -daemon -pid=/var/lib/lightpaycoind/lightpaycoind.pid \
+          -conf=/etc/lightpaycoin/lightpaycoin.conf -datadir=/var/lib/lightpaycoind
+
+ExecStop=-/usr/bin/lightpaycoin-cli -conf=/etc/lightpaycoin/lightpaycoin.conf \
+         -datadir=/var/lib/lightpaycoind stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
